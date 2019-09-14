@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,9 +16,15 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
-    val BASE_URL = "https://umorili.herokuapp.com"
+    val BASE_URL = "https://10.91.7.24/javahack"
     var tv_user: TextView? = null
     var str:String = ""
+
+    /**
+     * тут ничего нет
+     * и апишка не работает потому что поднят сервер на ноутбуке учатника
+     * =(
+     */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         tv_user = findViewById(R.id.tv_users)
         getUsers()
+
+        bank.setOnClickListener {
+            finish()
+        }
 
     }
 
@@ -45,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 val size = usres!!.size
 
                 for (i in 0 until size) {
-                    str = str + "\n" + usres?.get(i)?.link
+                    str = str + usres?.get(i)?.link + "\n"
                 }
 
                 tv_user!!.text = str

@@ -16,7 +16,10 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:padding="20dp">
+
+
 
         <TextView
             android:id="@+id/tv_users"
@@ -27,6 +30,54 @@
             android:text="Hello World!"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:text="Сервис"/>
+        <TextView
+            android:id="@+id/garantov"
+            android:layout_below="@id/service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="30dp"
+            android:text="Гарантов"/>
+
+        <TextView
+            android:id="@+id/reiffeisen"
+            android:layout_below="@id/garantov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="40dp"
+            android:text="Raiffeisen"/>
+        <TextView
+            android:id="@+id/bank"
+            android:layout_below="@id/garantov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/reiffeisen"
+            android:background="#c0c0c0"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:textColor="@color/yellow"
+            android:textSize="40dp"
+            android:text=" Bank "/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/login"
+            app:met_floatingLabel="normal"
+
+            android:hint="Имя"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reiffeisen"
             />
 
     </RelativeLayout>
